@@ -1,7 +1,7 @@
 package producer
 
 import (
-	"go-kafkaproxy/pkg/proxyerror"
+	"github.com/Jaskaranbir/go-kafkaproxy/pkg/proxyerror"
 	"log"
 	"os"
 	"os/signal"

@@ -1,7 +1,7 @@
 package mocks
 
 import (
-	"go-kafkaproxy/pkg/proxyerror"
+	"github.com/Jaskaranbir/go-kafkaproxy/pkg/proxyerror"
 
 	"github.com/Shopify/sarama"
 	"github.com/bsm/sarama-cluster"

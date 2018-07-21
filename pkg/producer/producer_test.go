@@ -1,7 +1,7 @@
 package producer
 
 import (
-	"go-kafkaproxy/mocks"
+	"github.com/Jaskaranbir/go-kafkaproxy/mocks"
 	"sync"
 	"testing"
 	"time"

@@ -1,11 +1,12 @@
 package consumer
 
 import (
-	"go-kafkaproxy/pkg/proxyerror"
 	"log"
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/Jaskaranbir/go-kafkaproxy/pkg/proxyerror"
 
 	"github.com/Shopify/sarama"
 	cluster "github.com/bsm/sarama-cluster"
