@@ -60,7 +60,7 @@ var _ = Describe("Consumer", func() {
 			initFunc = mockInitFunc
 
 			errHandler = func(err *error) {
-				Fail("Error occured: " + (*err).Error())
+				Fail("Error occurred: " + (*err).Error())
 			}
 			config = &Config{
 				ConsumerGroup: "test-group",
@@ -146,7 +146,7 @@ var _ = Describe("Consumer", func() {
 		BeforeEach(func() {
 			isMsgHandlerCalled = false
 			errHandler = func(err *error) {
-				Fail("Error occured: " + (*err).Error())
+				Fail("Error occurred: " + (*err).Error())
 			}
 			msgHandler = func(_ *sarama.ConsumerMessage, _ *Consumer) {
 				isMsgHandlerCalled = true
@@ -192,7 +192,7 @@ var _ = Describe("Consumer", func() {
 		BeforeEach(func() {
 			isNtfnHandlerCalled = false
 			errHandler = func(err *error) {
-				Fail("Error occured: " + (*err).Error())
+				Fail("Error occurred: " + (*err).Error())
 			}
 			ntfnHandler = func(_ *cluster.Notification) {
 				isNtfnHandlerCalled = true
@@ -237,7 +237,7 @@ var _ = Describe("Consumer", func() {
 
 		BeforeEach(func() {
 			errHandler = func(err *error) {
-				Fail("Error occured: " + (*err).Error())
+				Fail("Error occurred: " + (*err).Error())
 			}
 			config = &Config{
 				ConsumerGroup: "test-group",

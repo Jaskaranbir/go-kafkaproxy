@@ -175,7 +175,7 @@ func (c *Consumer) handleNotifications(ntfnHandler func(*cluster.Notification)) 
 }
 
 // Close attempts to close the consumer,
-// and returns any occuring errors over channel
+// and returns any occurring errors over channel
 func (c *Consumer) Close() chan error {
 	if c.IsClosed() {
 		return nil

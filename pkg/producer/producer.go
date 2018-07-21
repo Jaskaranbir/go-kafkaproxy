@@ -137,9 +137,9 @@ func (p *Producer) handleErrors(errHandler func(*sarama.ProducerError)) {
 }
 
 // Close attempts to close the producer,
-// and returns any occuring errors over channel
+// and returns any occurring errors over channel
 func (p *Producer) Close() chan error {
-	// The error-channel only contains errors occured
+	// The error-channel only contains errors occurred
 	// while closing producer. Ignore if producer already
 	// closed.
 	if p.IsClosed() {

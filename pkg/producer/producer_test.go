@@ -62,7 +62,7 @@ var _ = Describe("Producer", func() {
 			mockBroker, brokerAddr = setupMockBroker()
 
 			errHandler = func(err *sarama.ProducerError) {
-				Fail("Error occured: " + err.Error())
+				Fail("Error occurred: " + err.Error())
 			}
 			config = &Config{
 				KafkaBrokers: []string{brokerAddr},
@@ -117,7 +117,7 @@ var _ = Describe("Producer", func() {
 			mockBroker, brokerAddr = setupMockBroker()
 
 			errHandler = func(err *sarama.ProducerError) {
-				Fail("Error occured: " + err.Error())
+				Fail("Error occurred: " + err.Error())
 			}
 			config = &Config{
 				KafkaBrokers: []string{brokerAddr},
@@ -225,7 +225,7 @@ var _ = Describe("Producer", func() {
 			mockBroker, brokerAddr = setupMockBroker()
 
 			errHandler = func(err *sarama.ProducerError) {
-				Fail("Error occured: " + err.Error())
+				Fail("Error occurred: " + err.Error())
 			}
 			config = Config{
 				KafkaBrokers: []string{brokerAddr},

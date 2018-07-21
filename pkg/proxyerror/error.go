@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// ProxyError is error(s) occuring during communication with Kafka
+// ProxyError is error(s) occurring during communication with Kafka
 // Use Code for error reference
 // Try to use predefined errors (such as ConnectionError)
 // Add new if required

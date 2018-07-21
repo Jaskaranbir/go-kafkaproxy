@@ -11,6 +11,17 @@ dep ensure
 ```
 * Import/Use in your code!
 
+```Go
+import github.com/Jaskaranbir/go-kafkaproxy/pkg/consumer // Import Consumer
+import github.com/Jaskaranbir/go-kafkaproxy/pkg/producer // Import Producer
+```
+
+### Docs:
+
+* **[Consumer][2]**
+* **[Producer][3]**
+* **[ProxyError][4]**
+
 ### Minimal examples:
 
 #### Consumer:
@@ -75,3 +86,6 @@ time.Sleep(2000 * time.Millisecond)
 
   [0]: https://github.com/Shopify/sarama
   [1]: https://github.com/golang/dep
+  [2]: https://godoc.org/github.com/Jaskaranbir/go-kafkaproxy/pkg/consumer
+  [3]: https://godoc.org/github.com/Jaskaranbir/go-kafkaproxy/pkg/producer
+  [4]: https://godoc.org/github.com/Jaskaranbir/go-kafkaproxy/pkg/proxyerror
