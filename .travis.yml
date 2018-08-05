@@ -3,7 +3,6 @@ sudo: false
 language: go
 
 go:
-  - 1.9.2
   - 1.10.3
 
 # Only clone the most recent commit

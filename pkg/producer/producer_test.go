@@ -1,10 +1,11 @@
 package producer
 
 import (
-	"github.com/Jaskaranbir/go-kafkaproxy/mocks"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/Jaskaranbir/go-kafkaproxy/mocks"
 
 	"github.com/Shopify/sarama"
 
@@ -29,7 +30,7 @@ func setupMockBroker() (*sarama.MockBroker, string) {
 	return mockBroker, mockBroker.Addr()
 }
 
-func setupMockProducer(brokerAddr string, config *Config) (*Producer, *mocks.AsyncProducer) {
+func setupMockProducer(config *Config) (*Producer, *mocks.AsyncProducer) {
 	fakeProducer := mocks.AsyncProducer{
 		ErrorsChan:    make(chan *sarama.ProducerError),
 		InputChan:     make(chan *sarama.ProducerMessage),
@@ -123,7 +124,7 @@ var _ = Describe("Producer", func() {
 				KafkaBrokers: []string{brokerAddr},
 				ErrHandler:   errHandler,
 			}
-			asyncProducer, fakeProducer = setupMockProducer(brokerAddr, config)
+			asyncProducer, fakeProducer = setupMockProducer(config)
 		})
 		AfterEach(func() {
 			asyncProducer.Close()
@@ -186,7 +187,7 @@ var _ = Describe("Producer", func() {
 				KafkaBrokers: []string{brokerAddr},
 				ErrHandler:   errHandler,
 			}
-			asyncProducer, fakeProducer = setupMockProducer(brokerAddr, config)
+			asyncProducer, fakeProducer = setupMockProducer(config)
 			isErrHandlerCalled = false
 		})
 		AfterEach(func() {
@@ -231,7 +232,7 @@ var _ = Describe("Producer", func() {
 				KafkaBrokers: []string{brokerAddr},
 				ErrHandler:   errHandler,
 			}
-			asyncProducer, fakeProducer = setupMockProducer(brokerAddr, &config)
+			asyncProducer, fakeProducer = setupMockProducer(&config)
 		})
 		AfterEach(func() {
 			asyncProducer.Close()
