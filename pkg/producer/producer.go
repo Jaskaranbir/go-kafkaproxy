@@ -1,10 +1,12 @@
 package producer
 
 import (
-	"github.com/Jaskaranbir/go-kafkaproxy/pkg/proxyerror"
 	"log"
 	"os"
 	"os/signal"
+	"syscall"
+
+	"github.com/Jaskaranbir/go-kafkaproxy/pkg/proxyerror"
 
 	"github.com/Shopify/sarama"
 )
@@ -111,8 +113,10 @@ func (p *Producer) Input() (chan<- *sarama.ProducerMessage, error) {
 func (p *Producer) handleKeyInterrupt() {
 	// Capture the Ctrl+C signal (interrupt or kill)
 	sigChan := make(chan os.Signal, 1)
-	signal.Notify(sigChan, os.Interrupt)
-	signal.Notify(sigChan, os.Kill)
+	signal.Notify(sigChan,
+		syscall.SIGINT,
+		syscall.SIGTERM,
+		syscall.SIGQUIT)
 
 	// Elegant exit
 	go func() {
